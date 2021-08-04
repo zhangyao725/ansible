@@ -1,5 +1,5 @@
 # - hosts: public-daemon,private-daemon,winning-post-miner,window-post-miner,seal-miner,precommit-worker,commit-worker
-- hosts: 192.168.10.40
+- hosts: Miner
   remote_user: 'miner'
   gather_facts: no
   become: yes
