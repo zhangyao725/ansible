@@ -3,8 +3,7 @@
   remote_user: 'miner'
   gather_facts: no
   tasks:
-    - name: Miner info
-      command: /home/miner/lotus/lotus-miner info
+    - command: /home/miner/lotus/lotus-miner info
       register: returnvalue
     - debug:
       var: returnvalue
