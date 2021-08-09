@@ -3,8 +3,12 @@
   remote_user: 'miner'
   gather_facts: no
   tasks:
-    - name: miner info
-      shell: "nohup /home/miner/lotus/lotus-miner info"
+    - name: source env
+      shell: "source /etc/profile"
+    
+    - name: execute command
+      shell: "/home/miner/lotus/lotus-miner info"
       register: returnvalue
+      
     - name: display miner info
       debug: var=returnvalue
