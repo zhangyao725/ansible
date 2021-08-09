@@ -2,10 +2,6 @@
 - hosts: Miner
   remote_user: 'miner'
   gather_facts: no
-  become: yes
-  become_user: miner
-  become_flags: "-l"
-  
   tasks:
     - name: execute command
       shell: "/home/miner/lotus/lotus-miner info"
