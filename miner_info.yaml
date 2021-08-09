@@ -4,7 +4,7 @@
   gather_facts: no
   tasks:
     - name: miner info
-      shell: "/home/miner/lotus/lotus-miner info"
+      shell: "nohup /home/miner/lotus/lotus-miner info"
       register: returnvalue
     - name: display miner info
       debug: var=returnvalue
