@@ -1,0 +1,10 @@
+# - hosts: public-daemon,private-daemon,winning-post-miner,window-post-miner,seal-miner,precommit-worker,commit-worker
+- hosts: Miner
+  remote_user: 'miner'
+  gather_facts: no
+  tasks:
+    - name: Miner info
+      command: /home/miner/lotus/lotus-miner info
+      register: returnvalue
+    - debug:
+      var: returnvalue
