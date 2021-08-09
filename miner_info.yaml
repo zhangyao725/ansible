@@ -2,12 +2,13 @@
 - hosts: Miner
   remote_user: 'miner'
   gather_facts: no
+  become: yes
+  become_user: miner
+  become_flags: "-l"
+  
   tasks:
-    - name: source env
-      shell: "source /etc/profile"
-    
     - name: execute command
-      shell: "/home/miner/lotus/lotus-miner info"
+      command: "/home/miner/lotus/lotus-miner info"
       register: returnvalue
       
     - name: display miner info
